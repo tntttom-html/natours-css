@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //1rem = 10px
+
+  @include responsive(tab-land) {
+    // width < 1200
+    font-size: 56.25%; //1rem = 9px
+  }
+
+  @include responsive(tab-port) {
+    // width < 900
+    font-size: 50%; //1rem = 8px
+  }
+
+  @include responsive(big-desktop) {
+    font-size: 75%; //1rem = 12px
+  }
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 3rem;
+
+  @include responsive(tab-port) {
+    // width < 900
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
